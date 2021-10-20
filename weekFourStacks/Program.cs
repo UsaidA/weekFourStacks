@@ -21,40 +21,40 @@ namespace weekFourStacks
         {
             int top = 0;
         }
-        public static void push(int item, ref int top, ref int stack, int max)
+        public static void push(int item, ref int top, ref int[] stack, int max)
         {
-            if (isFUll(top, max) = true){
+            if (isFULL(top, max) == true){
                 stackFULL();
             }
             else
                 top = top + 1;
-                stack(top) = item;
+                stack[top] = item;
 
             
         }
-        public static void pop(out int item, ref int stack[], ref int top)
+        public static void pop(out int item, ref int[] stack, ref int top)
         {
-            if (isEmpty(top) = true) {
+            if (isEmpty(top, stack) == true) {
                 stackEmpty();
             }
             else{
-                item = stack(top);
+                item = stack[top];
                 top = top + 1;
             }
         }
-        public static int getTop(in int top, in int stack[])
+        public static int getTop(in int top, in int[] stack)
         {
-            if isEmpty(top) = true{
+            if (isEmpty(top, stack) == true){
                 stackEmpty();
             }
             else
             {
-                return stack(top);
+                return stack[top];
             }
         }
-        public static bool isEmpty (in int top, in int stack[])
+        public static bool isEmpty (in int top, in int[] stack)
         {
-            if (top = 0)
+            if (top == 0)
             {
                 return false;
             }
@@ -65,7 +65,7 @@ namespace weekFourStacks
         }
         public static bool isFULL(in int top, in int max)
         {
-            if (top = max)
+            if (top == max)
             {
                 return true;
             }
@@ -74,6 +74,15 @@ namespace weekFourStacks
                 return false;
             }
         }
-
+        public static string stackFULL()
+        {
+            string stackFull = "stack Full";
+            return stackFull;
+        }
+        public static string stackEmpty()
+        {
+            string stackEmpty = "Stack Empty";
+            return stackEmpty;
+        }
     }
 }
