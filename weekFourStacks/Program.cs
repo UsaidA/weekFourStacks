@@ -37,20 +37,18 @@ namespace weekFourStacks
             if (isEmpty(top, stack) == true) {
                 stackEmpty();
             }
-            else{
-                item = stack[top];
-                top = top + 1;
-            }
+            item = stack[top];
+            top = top + 1;
+            
         }
         public static int getTop(in int top, in int[] stack)
         {
             if (isEmpty(top, stack) == true){
                 stackEmpty();
             }
-            else
-            {
-                return stack[top];
-            }
+            
+            return stack[top];
+           
         }
         public static bool isEmpty (in int top, in int[] stack)
         {
